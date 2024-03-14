@@ -24,14 +24,14 @@ def new(ctx,name,lastname):
           print(f"new user created with  id {new_id}")
 
 
-@cli.command(name='lis_users')
+@cli.command(name='list_users')
 def users():
      data = json_manager.read_json()
      for user in data:
           print(f"{user['id']} - {user['name']} - {user['lastname']}")        
                          
-@cli.comand(name='view_user')
-@cli.argument('id',type=int)
+@cli.command(name='view_user')
+@click.argument('id',type=int)
 def user(id):
      data = json_manager.read_json()     
      user =  next((x for x in data if x['id'] == id), None)

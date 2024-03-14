@@ -13,6 +13,6 @@ def read_json():
 
 def write_json(data):
     with open('data.json','w') as f:
-        json.dump([],f)
+        json.dump(data,f)
         
 # __all__= ['read_json','write_json']        
